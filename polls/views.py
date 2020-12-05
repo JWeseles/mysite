@@ -73,3 +73,8 @@ class ContatoView(TemplateView):
     template_name = 'polls/contato.html'
 
 
+class Dia1View(TemplateView):
+    template_name = 'polls/dia1.html'
+
+
+

@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import ContatoView, VideosView, EventosView
+from .views import ContatoView, VideosView, EventosView, Dia1View
 
 from .import views
 
@@ -26,5 +26,7 @@ urlpatterns = [
     path('<int:question_id>/vote/', views.vote, name='vote'),
     path('videos/', VideosView.as_view(), name='videos.html'),
     path('eventos/', EventosView.as_view(), name='eventos.html'),
+    path('eventos/dia1/', Dia1View.as_view(), name='dia1.html'),
     path('contato/', ContatoView.as_view(), name='contato.html')
+
 ]

@@ -67,20 +67,24 @@
       <div class="container shadow-lg p-3 mb-5 bg-white rounded">
           <br>
               <div class="row">
-                  <div class="col-12 col-md-6">
-                        {% for postagem in postagens%}
-                      <center>
-                         <h5 class="card-title">{{ postagem.titulo }}</h5>
-                      </center>
-                        <div class="card mt-1 shadow-lg p-3 mb-5 bg-white rounded">
-                            <div class="card-body">
 
-                                <i><b>{{postagem.data_criacao}} - Autor: {{postagem.autor.username}}</b></i>
-                                <p class="card-text mt-2">{{ postagem.texto }}</p>
-                            </div>
-                        </div>
-                        {% endfor %}
+                  <div class="col-12 col-md-6">
+                      <center>
+                          <h5>Comunicado</h5>
+                      </center>
+
+                          <div class="card mt-1 shadow-lg p-3 mb-5 bg-white rounded">
+                              <p class="card-text">ERRATA! Informamos que o grande amistoso marcado para a proxima
+                              terça-feira entre as agremiações do IFMA e BB foi adiado. Segundo uma fonte que pediu
+                              anonimato os atletas do IFMA temendo uma goleada pediu mais tempo para se prepararem
+                              melhor para partida.</p>
+
+                              <div class="card-body">
+                                  <p class="card-text"></p>
+                              </div>
+                          </div>
                   </div>
+
                   <div class="col-12 col-md-6">
                       <center>
                           <h5>Copa Bela Vista 2020 - MA: Villarreal Campeão!</h5>

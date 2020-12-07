@@ -7,12 +7,6 @@ from django.views.generic import TemplateView
 from django.utils import timezone
 
 from django.shortcuts import render
-from polls.models import Postagem  # Mudei para from blog.models import Postagem
-
-
-def index(request):
-    postagens = Postagem.objects.all().order_by("-data_criacao")
-    return render(request, 'polls/index.html', {'postagens': postagens})
 
 
 class IndexView(generic.ListView):

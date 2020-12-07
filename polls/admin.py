@@ -1,15 +1,10 @@
-'''
-from django.contrib import admin
-
-from .models import Question, Choice
-
-admin.site.register(Question)
-admin.site.register(Choice)
-'''
-
-
 from django.contrib import admin
 from .models import Choice, Question
+
+from django.contrib import admin
+from .models import Postagem
+
+admin.site.register(Postagem)
 
 
 class ChoiceInline(admin.TabularInline):

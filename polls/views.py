@@ -1,10 +1,18 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from .models import Question, Choice
 from django.views import generic
 from django.views.generic import TemplateView
 from django.utils import timezone
+
+from django.shortcuts import render
+from polls.models import Postagem  # Mudei para from blog.models import Postagem
+
+
+def index(request):
+    postagens = Postagem.objects.all().order_by("-data_criacao")
+    return render(request, 'polls/index.html', {'postagens': postagens})
 
 
 class IndexView(generic.ListView):
@@ -75,6 +83,3 @@ class ContatoView(TemplateView):
 
 class Dia1View(TemplateView):
     template_name = 'polls/dia1.html'
-
-
-

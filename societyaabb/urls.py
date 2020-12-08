@@ -1,3 +1,4 @@
+'''
 from django.contrib import admin
 from django.urls import include, path
 
@@ -6,13 +7,18 @@ from django.urls import include, path
 
 urlpatterns = [
     path('', include('polls.urls')),
-    #    path('', IndexView),
+    path('admin/', admin.site.urls),
+]
+'''
+
+
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+
+    path('', include('polls.urls')),
+    path('blog/', include('blog.urls')),
     path('admin/', admin.site.urls),
 ]
 
-'''
-urlpatterns = [
-    url(r'^polls/', include('polls.urls')),
-    url(r'^admin/', admin.site.urls),
-]
-'''

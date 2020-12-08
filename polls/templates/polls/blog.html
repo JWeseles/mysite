@@ -1,6 +1,6 @@
 {% load static %}
 <!doctype html>
-<html lang="pt-br" xmlns="http://www.w3.org/1999/html">
+<html lang="pt-br">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -24,16 +24,16 @@
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/videos">Vídeos</a>
+        <a class="nav-link" href="/videos">Vídeos <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/eventos">Eventos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/blog">Blog</a>
+        <a class="nav-link" href="/eventos">Eventos <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Contato</a>
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contato">Contato <span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
@@ -44,39 +44,36 @@
   <div class="container shadow-lg p-3 mb-5 bg-white rounded">
 	      <div class="row">
               <div class="col-3"></div>
-	          <div class="col-12 col-md-6">
+	          <div class="col-12 col-md-6 mt-2">
 	                <div class="card mt-5 shadow-lg p-3 mb-5 bg-white rounded">
-                      <div class="card-body">
-                          <center>
-                          <h5 class="card-title"><b>Contato para desenvolvimento:</b></h5>
-                          </center>
-                          <br>
-                          <center>
-                          <img class="rounded-circle" src="{% static 'polls/images/perfil2.jpg' %}" alt="Imagem responsiva">
-                          </center>
 
-                          <center>
-                          <p class="card-text"><b><i>Alves</i></b></p>
-                          </center>
 
-                      </div>
-                      <ul class="list-group list-group-flush">
-                          <li class="list-group-item"><b><i><i class="fa fa-home" aria-hidden="true"></i> Endereço: Rua dos Lírios nº 09 - Primavera - São Raimundo das Mangabeiras - MA - CEP: 65.840-000</i></b></li>
-                          <li class="list-group-item"><b><i><i class="fa fa-envelope" aria-hidden="true"></i> E-mail: jweseles_al@hotmail.com</i></b></li>
-                          <li class="list-group-item"><b><i><i class="fa fa-mobile" aria-hidden="true"></i> Cel.: (99)98474-7008</i></b></li>
-                      </ul>
+                          {% for postagem in postagens%}
+                          <div class="card bg-white rounded mt-3">
+                             <div class="card-body">
+                                <h5 class="card-title">{{ postagem.titulo }}</h5>
+                                 <i><b>{{postagem.data_criacao}} - Autor: {{postagem.autor.username}}</b></i>
+                                <p class="card-text mt-2">{{ postagem.texto }}</p>
+                             </div>
+                          </div>
+                          {% endfor %}
+
                     </div>
               </div>
           </div>
   </div>
   <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
   <footer>
       <div class="row bg-dark">
           <div class="container text-center text-white">
               <p class="mt-4">&copy; Developer By José Weseles Alves</p>
           </div>
       </div>
-
 
   </footer>
 

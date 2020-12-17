@@ -1,5 +1,6 @@
 from django.urls import path
 
+from galeria.views import foto
 from .views import ContatoView, VideosView, EventosView, Dia1View
 
 from .import views
@@ -27,6 +28,7 @@ urlpatterns = [
     path('videos/', VideosView.as_view(), name='videos.html'),
     path('eventos/', EventosView.as_view(), name='eventos.html'),
     path('eventos/dia1/', Dia1View.as_view(), name='dia1.html'),
-    path('contato/', ContatoView.as_view(), name='contato.html')
+    path('contato/', ContatoView.as_view(), name='contato.html'),
+    path('foto/', foto, name='foto'),
 
 ]

@@ -30,9 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '_4j%a^ewx43v2ug44($das5j_m-m)+4pr_^@p8j-u-7j%x8nc1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['societyaabb-srm.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -145,7 +145,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGOUT_REDIRECT_URL = '/'
 
 # configurações de e-mail
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # o Heroku não disponibiliza um provedor de e-mail
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # o Heroku não disponibiliza um provedor de e-mail
 """
 EMAIL_HOST = 'localhost'
 EMAIL_HOST_USER = 'no-reply@seudomínio.com.br'

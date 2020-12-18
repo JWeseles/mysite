@@ -12,14 +12,14 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 
-'''
+
 # Usando PostgreSQL com heroku
 import dj_database_url
 
 DATABASES = {
     'default': dj_database_url.config()
 }
-'''
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -32,7 +32,7 @@ SECRET_KEY = '_4j%a^ewx43v2ug44($das5j_m-m)+4pr_^@p8j-u-7j%x8nc1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['societyaabb-srm.herokuapp.com']
 
 # Application definition
 
@@ -83,14 +83,14 @@ WSGI_APPLICATION = 'societyaabb.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+'''
 '''
 DATABASES = {
     'default': {

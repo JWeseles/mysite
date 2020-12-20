@@ -34,6 +34,10 @@ class Foto(Base):
         self.criado = timezone.now()
         self.save()
 
+    # def publicar(self, *args, **kwargs):
+        # self.criado = timezone.now()
+        # self.save(*args, **kwargs)
+
     def __std__(self):
         return self.titulo
 

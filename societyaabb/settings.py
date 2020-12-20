@@ -12,14 +12,14 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 
-
+'''
 # Usando PostgreSQL com heroku
 import dj_database_url
 
 DATABASES = {
     'default': dj_database_url.config()
 }
-
+'''
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -30,9 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '_4j%a^ewx43v2ug44($das5j_m-m)+4pr_^@p8j-u-7j%x8nc1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['societyaabb-srm.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 
     'bootstrap4',
     'stdimage',
-    'storages',
+    'media',
 ]
 
 MIDDLEWARE = [
@@ -92,7 +92,7 @@ DATABASES = {
     }
 }
 '''
-'''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -103,7 +103,7 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-'''
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -140,8 +140,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-MEDIA_URL = '/storages/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'storages')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGOUT_REDIRECT_URL = '/'
 
 # configurações de e-mail
@@ -153,17 +153,31 @@ EMAIL_PORT = 587
 EMAIL_USER_TSL = True
 EMAIL_HOST_PASSWORD = 'sua-senha'
 """
+'''
+AWS_ACCESS_KEY_ID = 'AKIA3DGCR3IDQKZUVIFH'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'societyaabb-srm'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age-86400'}
+AWS_DEFAULT_ACL = 'public-read'
 
-AWS_ACCESS_KEY_ID = 'AKIA3DGCR3IDYTVHCD6X'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'societyaabb'
+AWS_LOCATION = 'static'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
+STATICFILES_STORAGE = 'storage.backends.s3boto3.S3Boto3Storage'
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+'''
+'''
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-
-
-
+DEFAULT_FILE_STORAGE = 'media.backends.s3boto3.S3Boto3Storage'
+'''
+'''
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+LOGOUT_REDIRECT_URL = '/'
+'''
 
 

@@ -12,14 +12,14 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 
-'''
+
 # Usando PostgreSQL com heroku
 import dj_database_url
 
 DATABASES = {
     'default': dj_database_url.config()
 }
-'''
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -30,9 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '_4j%a^ewx43v2ug44($das5j_m-m)+4pr_^@p8j-u-7j%x8nc1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['societyaabb-srm.herokuapp.com']
 
 # Application definition
 
@@ -92,7 +92,7 @@ DATABASES = {
     }
 }
 '''
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -103,7 +103,7 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-
+'''
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -153,7 +153,8 @@ EMAIL_PORT = 587
 EMAIL_USER_TSL = True
 EMAIL_HOST_PASSWORD = 'sua-senha'
 """
-'''
+
+"""
 AWS_ACCESS_KEY_ID = 'AKIA3DGCR3IDQKZUVIFH'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'societyaabb-srm'
@@ -168,16 +169,14 @@ STATICFILES_DIRS = [
 
 STATICFILES_STORAGE = 'storage.backends.s3boto3.S3Boto3Storage'
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-'''
-'''
+
+
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'media.backends.s3boto3.S3Boto3Storage'
-'''
-'''
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGOUT_REDIRECT_URL = '/'
-'''
-
+"""
 

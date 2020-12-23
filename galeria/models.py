@@ -2,6 +2,7 @@ from django.db import models
 from stdimage.models import StdImageField
 from django.utils import timezone
 
+
 # SIGNALS
 from django.db.models import signals
 from django.template.defaultfilters import slugify
@@ -27,7 +28,13 @@ class Foto(Base):
     titulo = models.CharField('Título', max_length=100)
     autor = models.CharField('Autor', max_length=100)
     lugar = models.CharField('local', max_length=50)
-    imagem = StdImageField('Imagem', upload_to='foto', variations={'thumb': (840, 390)})
+    # imagem = StdImageField('Imagem', upload_to='foto', variations={'thumb': (840, 390)})
+    # imagem = models.ImageField('Imagem', upload_to='foto', variations={'thumb': (840, 390)})
+    imagem = models.ImageField('Imagem', upload_to='foto')
+
+    # imagem = models.ImageField(storage=S3BotoStorage(location='media'))
+    # imagem = models.ImageField(upload_to='storages.backends.s3boto')
+    # imagem = models.ImagesField('Imagem', upload_to='foto', variations={'thumb': (840, 390)})
     slug = models.SlugField('Slug', max_length=100, blank=True, editable=False)
 
     def publicar(self):

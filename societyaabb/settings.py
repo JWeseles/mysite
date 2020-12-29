@@ -38,6 +38,7 @@ ALLOWED_HOSTS = ['societyaabb-srm.herokuapp.com']
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
+    'eventos.apps.EventosConfig',
     'polls.apps.PollsConfig',
     'galeria.apps.GaleriaConfig',
     'django.contrib.admin',
@@ -154,7 +155,7 @@ EMAIL_PORT = 587
 EMAIL_USER_TSL = True
 EMAIL_HOST_PASSWORD = 'sua-senha'
 """
-
+"""
 AWS_ACCESS_KEY_ID = 'AKIA3DGCR3IDQKZUVIFH'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'societyaabb-srm'
@@ -162,3 +163,14 @@ AWS_STORAGE_BUCKET_NAME = 'societyaabb-srm'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+"""
+
+from django.contrib.messages import constants
+
+MESSAGE_TAGS = {
+    constants.ERROR: 'alert-danger',
+    constants.WARNING: 'alert-warning',
+    constants.DEBUG: 'alert-info',
+    constants.SUCCESS: 'alert-success',
+    constants.INFO: 'alert-info',
+}

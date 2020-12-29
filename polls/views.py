@@ -66,14 +66,16 @@ def vote(request, question_id):
 class VideosView(TemplateView):
     template_name = 'polls/videos.html'
 
-
+"""
 class EventosView(TemplateView):
     template_name = 'polls/eventos.html'
+"""
 
 
 class ContatoView(TemplateView):
     template_name = 'polls/contato.html'
 
-
+"""
 class Dia1View(TemplateView):
     template_name = 'polls/dia1.html'
+"""

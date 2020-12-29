@@ -54,7 +54,6 @@
                                     <table class="table">
                                           <thead>
                                             <tr>
-                                              <th scope="col">Título</th>
                                               <th scope="col">Nome</th>
                                               <th scope="col">Local</th>
                                               <th scope="col">Reservado para:</th>
@@ -63,7 +62,6 @@
                                           <tbody>
                                             {% for Evento in eventos  %}
                                                 <tr>
-                                                    <td scope="row">{{ Evento.titulo }}</td>
                                                     <td scope="row">{{ Evento.autor }}</td>
                                                     <td scope="row">{{ Evento.lugar }}</td>
                                                     <td scope="row"><i class="fa fa-calendar" aria-hidden="true"></i>

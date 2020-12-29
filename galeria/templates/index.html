@@ -58,7 +58,7 @@
                                 <table class="table">
                                       <thead>
                                         <tr>
-                                          <th scope="col">#</th>
+
                                           <th scope="col">Título</th>
                                           <th scope="col">Autor</th>
                                           <th scope="col">Local</th>
@@ -68,7 +68,7 @@
                                       <tbody>
                                         {% for foto in imagens %}
                                             <tr>
-                                                <td scope="row">{{ foto.id }}</td>
+
                                                 <td scope="row"><a href="#modal{{foto.id}}" data-toggle="modal">{{ foto.titulo }}</a></td>
                                                 <td scope="row">{{ foto.autor }}</td>
                                                 <td scope="row">{{ foto.lugar }}</td>
